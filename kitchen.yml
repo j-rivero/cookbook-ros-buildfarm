@@ -1,17 +1,31 @@
 ---
-provisioner:
-  name: chef_solo
-  product_name: chef
-  product_version: 15
-  require_chef_omnibus: 15
-  solo_rb:
-    environment: test
+driver:
+  name: dokken
+  chef_version: 15
+  use_sudo: false
+  priviledged: true
+  env: [CHEF_LICENSE=accept]
 
 transport:
   name: dokken
 
+provisioner:
+  name: dokken
+  chef_binary: /opt/chef/bin/chef-solo
+  chef_options: "-Etest"
+  chef_log_level: debug
+  chef_output_format: minimal
+
+  # name: chef_solo
+  # product_name: chef
+  # product_version: 15
+  #solo_rb:
+  #  environment: test
+
 platforms:
   - name: ubuntu-20.04
+    driver:
+      image: dokken/ubuntu-20.04
 
 verifier:
   name: inspec

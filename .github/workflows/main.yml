@@ -1,0 +1,31 @@
+---
+# This workflow uses actions that are not certified by GitHub.
+# They are provided by a third-party and are governed by
+# separate terms of service, privacy policy, and support
+# documentation.
+# This workflow will download a prebuilt Ruby version, install dependencies and run tests with Rake
+# For more information see: https://github.com/marketplace/actions/setup-ruby-jruby-and-truffleruby
+
+name: kitchen test
+
+on: push
+
+jobs:
+  test:
+    runs-on: ubuntu-20.04
+    name: Ubuntu Bionic
+    strategy:
+      matrix:
+        os: ['ubuntu-2004']
+      fail-fast: false
+    steps:
+    - name: Check out code
+      uses: actions/checkout@master
+    - name: Install Chef
+      uses: actionshub/chef-install@master
+    - name: Run tests
+      run: |
+        kitchen test
+      env:
+        CHEF_LICENSE: accept-no-persist
+        KITCHEN_LOCAL_YAML: kitchen.docken.yml

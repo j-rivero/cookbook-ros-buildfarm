@@ -20,6 +20,7 @@ platforms:
   - name: ubuntu-20.04
     driver:
       image: dokken/ubuntu-20.04
+      pid_one_command: /bin/systemd
 
 verifier:
   name: inspec

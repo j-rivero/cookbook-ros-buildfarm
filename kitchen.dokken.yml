@@ -34,18 +34,18 @@ suites:
       inspec_tests:
         - test/integration/agent
     attributes:
-#  - name: jenkins
-#    data_bags_path: "test/integration/data_bags"
-#    run_list:
-#      - recipe[ros_buildfarm::jenkins]
-#    verifier:
-#      inspec_tests:
-#        - test/integration/jenkins
-#  - name: repo
-#    data_bags_path: "test/integration/data_bags"
-#    run_list:
-#      - recipe[ros_buildfarm::repo]
-#    verifier:
-#      inspec_tests:
-#        - test/integration/repo
-#    attributes:
+  - name: jenkins
+    data_bags_path: "test/integration/data_bags"
+    run_list:
+      - recipe[ros_buildfarm::jenkins]
+    verifier:
+      inspec_tests:
+        - test/integration/jenkins
+  - name: repo
+    data_bags_path: "test/integration/data_bags"
+    run_list:
+      - recipe[ros_buildfarm::repo]
+    verifier:
+      inspec_tests:
+        - test/integration/repo
+    attributes:

@@ -24,7 +24,7 @@ jobs:
       uses: actions/checkout@master
     - name: Install Chef
       uses: actionshub/chef-install@master
-   - name: Test-Kitchen
+    - name: Test-Kitchen
       uses: actionshub/test-kitchen@master
       with:
         suite: ${{ matrix.suite }}

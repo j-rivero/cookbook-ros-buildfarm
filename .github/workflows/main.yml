@@ -25,6 +25,7 @@ jobs:
       uses: actionshub/chef-install@master
     - name: Run tests
       run: |
+        kitchen diagnose
         kitchen test
       env:
         CHEF_LICENSE: accept-no-persist

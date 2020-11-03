@@ -25,6 +25,7 @@ jobs:
       uses: actionshub/chef-install@master
     - name: Run tests
       run: |
+        export KITCHEN_LOCAL_YAML=kitchen.dokken.yml
         kitchen test
       env:
         CHEF_LICENSE: accept-no-persist

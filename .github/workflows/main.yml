@@ -13,7 +13,7 @@ on: push
 jobs:
   test:
     runs-on: ubuntu-20.04
-    name: Ubuntu Bionic
+    name: Ubuntu Focal
     strategy:
       matrix:
         os: ['ubuntu-2004']

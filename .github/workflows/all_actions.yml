@@ -18,6 +18,7 @@ jobs:
       matrix:
         os: ['ubuntu-2004']
         suite: ['agent', 'repo', 'agent']
+        chef_version: ['15', '16']
       fail-fast: false
     steps:
     - name: Check out code
@@ -31,4 +32,4 @@ jobs:
         os: ${{ matrix.os }}
       env:
         CHEF_LICENSE: accept-no-persist
-        KITCHEN_LOCAL_YAML: kitchen.dokken.yml
+        KITCHEN_LOCAL_YAML: kitchen.dokken.chef${{ matrix.chef_version }}.yml

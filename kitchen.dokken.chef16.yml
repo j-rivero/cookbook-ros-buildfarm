@@ -44,6 +44,9 @@ suites:
   - name: repo
     data_bags_path: "test/integration/data_bags"
     run_list:
+      # TODO: the repo.rb recipe uses include_recipe agent but without
+      # declaring here the use of the agent recipe first the
+      # installation fails. This needs debug.
       - recipe[ros_buildfarm::agent]
       - recipe[ros_buildfarm::repo]
     verifier:

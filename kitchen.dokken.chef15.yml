@@ -44,7 +44,7 @@ suites:
   - name: repo
     data_bags_path: "test/integration/data_bags"
     run_list:
-      - recipe[ros_buildfarm::jenkins]
+      - recipe[ros_buildfarm::agent]
       - recipe[ros_buildfarm::repo]
     verifier:
       inspec_tests:

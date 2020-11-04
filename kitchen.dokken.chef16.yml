@@ -40,6 +40,8 @@ suites:
       ros_buildfarm:
         smtp: true
     run_list:
+      - recipe[ros_buildfarm::agent]
+      - recipe[ros_buildfarm::repo]
       - recipe[ros_buildfarm::jenkins]
     verifier:
       inspec_tests:
